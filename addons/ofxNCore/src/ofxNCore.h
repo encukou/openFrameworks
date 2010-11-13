@@ -38,16 +38,16 @@
 #ifndef OFXNCORE_H
 #define OFXNCORE_H
 
+//image filters
+#include "Filters/GPUImageFilter.h"
+#include "Filters/CPUImageFilter.h"
+#include "Filters/ProcessFilters.h"
+
 #include "Events/TouchMessenger.h"
 
 //Used for tracking algo
 #include "Tracking/BlobManager.h"
 #include "Tracking/Tracking.h"
-
-//image filters
-#include "Filters/GPUImageFilter.h"
-#include "Filters/CPUImageFilter.h"
-#include "Filters/ProcessFilters.h"
 
 //Used for warped image calibration
 //#include "Calibration/boxAlign.h"

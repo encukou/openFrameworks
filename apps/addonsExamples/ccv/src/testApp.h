@@ -4,10 +4,10 @@
 //if standalone mode/non-addon
 #define STANDALONE
 
-//main
-#include "ofMain.h"
 //addon
 #include "ofxNCore.h"
+//main
+#include "ofMain.h"
 
 class testApp : public ofBaseApp, public TouchListener
 {

@@ -11,6 +11,9 @@
 #ifndef _ofxNCoreVision_H
 #define _ofxNCoreVision_H
 
+//Our Addon
+#include "ofxNCore.h"
+
 //Main
 #include "ofMain.h"
 //Addons
@@ -26,9 +29,6 @@
 #include "ofxOsc.h"
 #include "ofxThread.h"
 #include "ofxXmlSettings.h"
-
-//Our Addon
-#include "ofxNCore.h"
 
 //height and width of the source/tracked draw window
 #define MAIN_WINDOW_HEIGHT 240.0f
