@@ -38,7 +38,9 @@ void ofxGuiButton::init(int id, string name, int x, int y, int width, int height
 	setValue(value);
 	setControlRegion(0, 0, width, height);
 
-	logo.loadImage(image);
+    if(image.length() > 0) {
+        logo.loadImage(image);
+    }
 }
 
 //	----------------------------------------------------------------------------------------------------
