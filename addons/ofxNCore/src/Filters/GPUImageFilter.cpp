@@ -66,16 +66,17 @@ void GPUImageFilter::parseXML(const char* fname){
 	//load filter description file
 	printf("Loading Filter...\n");
 
-
 	//load and parse xml filter description file
 	TiXmlDocument doc(ofToDataPath(fname).c_str());
-	if (!doc.LoadFile()) printf("error loading filter description file");
-
+	if (!doc.LoadFile()) {
+      printf("error loading filter description file");
+      return;
+    }
 
 	//get the name of the filter
 	TiXmlElement* root_node = doc.RootElement();
 
-	this->name = root_node->Attribute("name");
+    this->name = root_node->Attribute("name");
 
 	printf("Filter Name:%s\n", this->name);
 
