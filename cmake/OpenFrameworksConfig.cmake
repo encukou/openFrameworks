@@ -4,6 +4,7 @@ get_filename_component(OPENFRAMEWORKS_ROOT "${OPENFRAMEWORKS_CMAKE_DIR_ROOT}/../
 set(OPENFRAMEWORKS_ADDONS_ROOT "${OPENFRAMEWORKS_ROOT}/addons/")
 
 set(OPENFRAMEWORKS_INCLUDES_SEARCH_PATHS 
+                                 /usr/include/*
                                  ${OPENFRAMEWORKS_ROOT}/libs/fmodex/include
                                  ${OPENFRAMEWORKS_ROOT}/libs/FreeImage/include
                                  ${OPENFRAMEWORKS_ROOT}/libs/freetype/include
@@ -16,7 +17,6 @@ set(OPENFRAMEWORKS_INCLUDES_SEARCH_PATHS
                                  ${OPENFRAMEWORKS_ROOT}/libs/rtAudio/include
                                  ${OPENFRAMEWORKS_ROOT}/libs/unicap/include
                                  ${OPENFRAMEWORKS_ROOT}/libs/videoInput/include
-                                 /usr/include/*
                                  
                                  CACHE STRING "OpenFrameworks includes search path")
 if(APPLE)
@@ -44,6 +44,7 @@ elseif( "${CMAKE_SYSTEM_NAME}" MATCHES "Linux")
   endif()
 
      set(OPENFRAMEWORKS_LIBRARIES_SEARCH_PATHS 
+                                     /usr/lib/*
                                      ${OPENFRAMEWORKS_ROOT}/libs/fmodex/lib/${SUBLIBDIRSUFFIX}
                                      ${OPENFRAMEWORKS_ROOT}/libs/FreeImage/lib/${SUBLIBDIRSUFFIX}
                                      ${OPENFRAMEWORKS_ROOT}/libs/freetype/lib/${SUBLIBDIRSUFFIX}

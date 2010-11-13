@@ -6,6 +6,8 @@ obj/
 openFrameworks.a
 openFrameworksDebug.a
 openFrameworksUniversal.a
+libopenFrameworks.a
+libopenFrameworks.so
 *.app/
 
 #rule to avoid non-official addons going into git
@@ -50,4 +52,10 @@ apps/*/*/Release Linux
 apps/*/*/Debug Linux64
 apps/*/*/Release Linux64
 
-
+# CMake trash
+CMakeCache.txt
+CMakeFiles/
+Makefile
+*.pc
+cmake_install.cmake
+install_manifest.txt

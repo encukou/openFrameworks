@@ -1,0 +1,12 @@
+Install all dependencies first.
+
+Then:
+    cd libs/openFrameworks
+    cmake .
+    make
+
+If something's wrong, then fix it and clear the cache:
+    rm -r CMakeFiles CMakeCache.txt openFrameworks.pc
+    make clean
+    cmake .
+    make

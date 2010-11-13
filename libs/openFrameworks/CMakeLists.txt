@@ -15,6 +15,7 @@ set (OFX_SOURCE_FILES
             utils/ofMath.cpp
             communication/ofArduino.cpp
             communication/ofSerial.cpp
+            events/ofEvents.cpp
             graphics/ofBitmapFont.cpp
             graphics/ofGraphics.cpp
             graphics/ofImage.cpp
@@ -25,7 +26,7 @@ set (OFX_SOURCE_FILES
             app/ofAppRunner.cpp
             app/ofAppGlutWindow.cpp
             video/ofVideoPlayer.cpp
-#            video/ofGstUtils.cpp
+            video/ofGstUtils.cpp
             video/ofVideoGrabber.cpp
             video/ofQtUtils.cpp
             utils/ofNoise.h
