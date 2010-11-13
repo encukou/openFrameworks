@@ -542,7 +542,7 @@ void ofxNCoreVision::_draw(ofEventArgs &e)
 
 void ofxNCoreVision::drawFullMode(){
 
-	ofSetColor(0xFFFFFF);
+	ofSetHexColor(0xFFFFFF);
 	//Draw Background Image
 	background.draw(0, 0);
 	//Draw arrows
@@ -552,12 +552,12 @@ void ofxNCoreVision::drawFullMode(){
 	ofTriangle(70, 420, 70, 460, 50, 440);
 	ofSetColor(255, 255, 0);
 
-	ofSetColor(0xFFFFFF);
+	ofSetHexColor(0xFFFFFF);
 	//Draw Image Filters To Screen
 	if (bGPUMode) filter->drawGPU();
 	else filter->draw();
 
-	ofSetColor(0x000000);
+	ofSetHexColor(0x000000);
 	if (bShowPressure)
 	{
 		bigvideo.drawString("Pressure Map", 140, 20);
@@ -572,7 +572,7 @@ void ofxNCoreVision::drawFullMode(){
 	ofSetColor(79, 79, 79);
 	ofFill();
 	ofRect(721, 586, 228, 14);
-	ofSetColor(0xFFFFFF);
+	ofSetHexColor(0xFFFFFF);
 	ofDrawBitmapString("|  ~  |tbeta.nuigroup.com", 725, 596);
 
 	//Display Application information in bottom right
@@ -585,7 +585,7 @@ void ofxNCoreVision::drawFullMode(){
         str2+= ofToString(camWidth, 0) + " x " + ofToString(camWidth, 0)  + "\n";
 		string str4 = "Camera [fps]:     ";
 		str4+= ofToString(fps, 0)+"\n";
-		ofSetColor(0xFFFFFF);
+		ofSetHexColor(0xFFFFFF);
 		verdana.drawString(str + str2 + str4, 740, 410);
 	}
 	else
@@ -594,14 +594,14 @@ void ofxNCoreVision::drawFullMode(){
 		str2+= ofToString(vidPlayer->width, 0) + " x " + ofToString(vidPlayer->height, 0)  + "\n";
 		string str4 = "Video [fps]:        ";
 		str4+= ofToString(fps, 0)+"\n";
-		ofSetColor(0xFFFFFF);
+		ofSetHexColor(0xFFFFFF);
 		verdana.drawString(str + str2 + str4, 740, 410);
 	}
 
 	if (bTUIOMode)
 	{
 		//Draw Port and IP to screen
-		ofSetColor(0xffffff);
+		ofSetHexColor(0xffffff);
 		char buf[256];
 		if(myTUIO.bOSCMode)
 			sprintf(buf, "Sending OSC messages to:\nHost: %s\nPort: %i", myTUIO.localHost, myTUIO.TUIOPort);
@@ -615,7 +615,7 @@ void ofxNCoreVision::drawFullMode(){
 		verdana.drawString(buf, 740, 480);
 	}
 
-	ofSetColor(0xFF0000);
+	ofSetHexColor(0xFF0000);
 	verdana.drawString("Press spacebar to toggle fast mode", 730, 572);
 }
 
@@ -654,9 +654,9 @@ void ofxNCoreVision::drawMiniMode()
 
 	//draw green tuio circle
 	if((myTUIO.bIsConnected || myTUIO.bOSCMode) && bTUIOMode)//green = connected
-	ofSetColor(0x00FF00);
+	ofSetHexColor(0x00FF00);
 	else
-	ofSetColor(0xFF0000); //red = not connected
+	ofSetHexColor(0xFF0000); //red = not connected
 	ofFill();
 	ofCircle(ofGetWidth() - 17 , ofGetHeight() - 10, 5);
 	ofNoFill();
@@ -677,13 +677,13 @@ void ofxNCoreVision::drawFingerOutlines()
 			float xpos = contourFinder.blobs[i].centroid.x * (MAIN_WINDOW_WIDTH/camWidth);
 			float ypos = contourFinder.blobs[i].centroid.y * (MAIN_WINDOW_HEIGHT/camHeight);
 
-			ofSetColor(0xCCFFCC);
+			ofSetHexColor(0xCCFFCC);
 			char idStr[1024];
 			sprintf(idStr, "id: %i", contourFinder.blobs[i].id);
 			verdana.drawString(idStr, xpos + 365, ypos + contourFinder.blobs[i].boundingRect.height/2 + 45);
 		}
 	}
-	ofSetColor(0xFFFFFF);
+	ofSetHexColor(0xFFFFFF);
 }
 
 /*****************************************************************************

@@ -60,18 +60,18 @@ class Blob {
                 glTranslatef(-(x + angleBoundingRect.x/inputWidth * outputWidth), -(y + angleBoundingRect.y/inputHeight * outputHeight), 0.0f);                
 				
 				//draw box
-//				ofSetColor(0xFFFFFF);
+//				ofSetHexColor(0xFFFFFF);
 //				ofRect(x + (angleBoundingRect.x - angleBoundingRect.width/2)/inputWidth * outputWidth, y + (angleBoundingRect.y - angleBoundingRect.height/2)/inputHeight * outputHeight, angleBoundingRect.width/inputWidth * outputWidth, angleBoundingRect.height/inputHeight * outputHeight);
 
 				//draw cross-hairs	
-				ofSetColor(0x0099FF);
+				ofSetHexColor(0x0099FF);
                 ofRect(x + (angleBoundingRect.x/inputWidth) * outputWidth, y + ((angleBoundingRect.y - angleBoundingRect.height)/inputHeight) * outputHeight, 1, (angleBoundingRect.height * 2)/inputHeight * outputHeight); //Vertical Plus
                 ofRect(x + ((angleBoundingRect.x - angleBoundingRect.width)/inputWidth) * outputWidth, y + (angleBoundingRect.y/inputHeight) * outputHeight, (angleBoundingRect.width * 2)/inputWidth * outputWidth, 1); //Horizontal Plus
             glPopMatrix();
 
 			//draw contours
 			ofNoFill();
-            ofSetColor(0xFF0099);
+            ofSetHexColor(0xFF0099);
             ofBeginShape();
             for (int i = 0; i < nPts; i++){
                    ofVertex(x + pts[i].x/inputWidth * outputWidth, y + pts[i].y/(inputHeight) * outputHeight);
