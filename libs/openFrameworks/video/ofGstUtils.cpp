@@ -462,7 +462,7 @@ static void get_device_data (ofGstDevice &webcam_device, int desired_framerate)
 	GstMessage * msg = gst_bus_poll (bus, GST_MESSAGE_ERROR, 0);
 	gst_object_unref (bus);
 
-	if ((msg == NULL) && (ret == GST_STATE_CHANGE_SUCCESS)){
+	if ((msg == NULL) && (ret == GST_STATE_CHANGE_SUCCESS || ret == GST_STATE_CHANGE_ASYNC)){
 		gst_element_set_state (pipeline, GST_STATE_PAUSED);
 
 		GstElement *src = gst_bin_get_by_name (GST_BIN (pipeline), "source");
@@ -486,7 +486,7 @@ static void get_device_data (ofGstDevice &webcam_device, int desired_framerate)
 
 		g_error_free(err);
 		g_free(debug);
-	}
+    }
 	gst_element_set_state (pipeline, GST_STATE_NULL);
 	gst_object_unref (pipeline);
 
