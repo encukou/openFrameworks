@@ -1,5 +1,5 @@
 #include "testApp.h"
-
+#define _USE_LIVE_VIDEO
 
 //--------------------------------------------------------------
 void testApp::setup(){
